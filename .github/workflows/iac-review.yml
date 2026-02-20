@@ -20,5 +20,6 @@ jobs:
         with:
           param_file: infra/params/dev.bicepparam
           comment_mode: update
+          server_address: https://dev.resourcepulseapp.com
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
