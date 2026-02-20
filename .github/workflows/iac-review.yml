@@ -16,7 +16,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - uses: resourcepulse-io/azure-iac-reviewer@main
+      - uses: resourcepulse-io/bicep-azure-iac-reviewer@main
         with:
           param_file: infra/params/dev.bicepparam
           comment_mode: update
