@@ -45,9 +45,38 @@ module cosmos 'modules/cosmos.bicep' = {
   }
 }
 
+module vm 'modules/vm.bicep' = {
+  name: 'vm'
+  params: {
+    location: location
+    env: env
+    appName: appName
+  }
+}
+
+module database 'modules/database.bicep' = {
+  name: 'database'
+  params: {
+    location: location
+    env: env
+    appName: appName
+  }
+}
+
+module redis 'modules/redis.bicep' = {
+  name: 'redis'
+  params: {
+    location: location
+    env: env
+    appName: appName
+  }
+}
+
 // ── Outputs ───────────────────────────────────────────────────────────────────
 
 output storageAccountName string = storage.outputs.storageAccountName
 output appServiceUrl string = appservice.outputs.appServiceUrl
 output keyVaultUri string = keyvault.outputs.keyVaultUri
 output cosmosEndpoint string = cosmos.outputs.cosmosEndpoint
+output sqlServerFqdn string = database.outputs.sqlServerFqdn
+output redisHostName string = redis.outputs.redisHostName

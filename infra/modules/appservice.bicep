@@ -9,7 +9,7 @@ param appName string
 
 var planSku = env == 'prod'
   ? { name: 'P2v3', tier: 'PremiumV3', size: 'P2v3', family: 'Pv3', capacity: 2 }
-  : { name: 'B1',   tier: 'Basic',     size: 'B1',   family: 'B',   capacity: 1 }
+  : { name: 'P1v3', tier: 'PremiumV3', size: 'P1v3', family: 'Pv3', capacity: 1 }
 
 resource appServicePlan 'Microsoft.Web/serverfarms@2023-01-01' = {
   name: '${appName}-${env}-plan'
