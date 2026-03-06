@@ -6,7 +6,7 @@ resource vm 'Microsoft.Compute/virtualMachines@2023-03-01' = {
   location: location
   properties: {
     hardwareProfile: {
-      vmSize: 'Standard_D8s_v3'
+      vmSize: 'Standard_D16s_v3'
     }
     storageProfile: {
       imageReference: {
