@@ -6,9 +6,9 @@ resource redis 'Microsoft.Cache/redis@2023-08-01' = {
   location: location
   properties: {
     sku: {
-      name: 'Standard'
-      family: 'C'
-      capacity: 2
+      name: 'Premium'
+      family: 'P'
+      capacity: 1
     }
     minimumTlsVersion: '1.2'
   }
