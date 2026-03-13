@@ -17,7 +17,7 @@ jobs:
 
       - uses: resourcepulse-io/bicep-azure-iac-reviewer@main
         with:
-          api_key: ${{ secrets.RESOURCEPULSE_API_KEY }}
+          api_key: ${{ secrets.TEAM_API_KEY }}
           param_file: infra/params/dev.bicepparam
           comment_mode: update
         env:
