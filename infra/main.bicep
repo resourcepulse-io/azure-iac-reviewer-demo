@@ -49,6 +49,14 @@ module acr 'modules/acr.bicep' = {
   }
 }
 
+module worker 'modules/worker.bicep' = {
+  name: 'worker'
+  params: {
+    location: location
+    environment: environment
+  }
+}
+
 module keyvault 'modules/keyvault.bicep' = {
   name: 'keyvault'
   params: {
@@ -63,4 +71,5 @@ output postgresHost string = postgres.outputs.postgresHost
 output redisHostName string = redis.outputs.redisHostName
 output serviceBusEndpoint string = servicebus.outputs.serviceBusEndpoint
 output acrLoginServer string = acr.outputs.loginServer
+output workerVmName string = worker.outputs.workerVmName
 output keyVaultName string = keyvault.outputs.keyVaultName
