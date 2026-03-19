@@ -5,8 +5,9 @@ resource serviceBusNamespace 'Microsoft.ServiceBus/namespaces@2022-10-01-preview
   name: 'sb-demo-${environment}-${uniqueString(resourceGroup().id)}'
   location: location
   sku: {
-    name: 'Standard'
-    tier: 'Standard'
+    name: 'Premium'
+    tier: 'Premium'
+    capacity: 1
   }
   tags: {
     environment: environment
