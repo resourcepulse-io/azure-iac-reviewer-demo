@@ -5,7 +5,7 @@ resource appServicePlan 'Microsoft.Web/serverfarms@2023-01-01' = {
   name: 'asp-demo-${environment}'
   location: location
   sku: {
-    name: 'P1v3'
+    name: 'P2v3'
     tier: 'PremiumV3'
   }
   kind: 'linux'
