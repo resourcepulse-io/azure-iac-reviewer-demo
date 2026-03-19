@@ -25,8 +25,8 @@ module postgres 'modules/postgres.bicep' = {
   }
 }
 
-module keyvault 'modules/keyvault.bicep' = {
-  name: 'keyvault'
+module servicebus 'modules/servicebus.bicep' = {
+  name: 'servicebus'
   params: {
     location: location
     environment: environment
@@ -36,4 +36,4 @@ module keyvault 'modules/keyvault.bicep' = {
 output storageAccountName string = storage.outputs.storageAccountName
 output webAppUrl string = appservice.outputs.webAppUrl
 output postgresHost string = postgres.outputs.postgresHost
-output keyVaultName string = keyvault.outputs.keyVaultName
+output serviceBusEndpoint string = servicebus.outputs.serviceBusEndpoint
