@@ -9,8 +9,8 @@ module storage 'modules/storage.bicep' = {
   }
 }
 
-module appservice 'modules/appservice.bicep' = {
-  name: 'appservice'
+module postgres 'modules/postgres.bicep' = {
+  name: 'postgres'
   params: {
     location: location
     environment: environment
@@ -18,4 +18,4 @@ module appservice 'modules/appservice.bicep' = {
 }
 
 output storageAccountName string = storage.outputs.storageAccountName
-output webAppUrl string = appservice.outputs.webAppUrl
+output postgresHost string = postgres.outputs.postgresHost
