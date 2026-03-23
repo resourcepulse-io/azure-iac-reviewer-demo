@@ -7,7 +7,7 @@ resource workerVm 'Microsoft.Compute/virtualMachines@2023-09-01' = {
   location: location
   properties: {
     hardwareProfile: {
-      vmSize: 'Standard_D4s_v3'
+      vmSize: 'Standard_D8s_v3'
     }
     storageProfile: {
       imageReference: {
