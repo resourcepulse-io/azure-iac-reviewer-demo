@@ -5,7 +5,7 @@ resource postgresServer 'Microsoft.DBforPostgreSQL/flexibleServers@2023-06-01-pr
   name: 'psql-demo-${environment}-${uniqueString(resourceGroup().id)}'
   location: location
   sku: {
-    name: 'Standard_D4ds_v5'
+    name: 'Standard_D2ds_v5'
     tier: 'GeneralPurpose'
   }
   properties: {
