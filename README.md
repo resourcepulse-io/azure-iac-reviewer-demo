@@ -10,7 +10,7 @@ When you open a pull request that modifies files in `infra/`, the ResourcePulse 
 2. Calls the ResourcePulse API to estimate costs and run policy checks
 3. Posts a detailed comment directly on the PR
 
-No API key required — this demo runs in **Sandbox mode** using GitHub OIDC authentication.
+This demo runs with a **Starter** API key.
 
 ## Infrastructure
 
@@ -59,11 +59,12 @@ No issues found!
 
 ## Workflow
 
-The workflow at `.github/workflows/iac-review.yml` uses sandbox mode — no secrets needed:
+The workflow at `.github/workflows/iac-review.yml`:
 
 ```yaml
-- uses: resourcepulse-io/azure-iac-reviewer@main
+- uses: resourcepulse-io/bicep-azure-iac-reviewer@main
   with:
+    api_key: ${{ secrets.RESOURCEPULSE_API_KEY }}
     param_file: infra/params/dev.bicepparam
     comment_mode: update
   env:
@@ -74,9 +75,9 @@ The workflow at `.github/workflows/iac-review.yml` uses sandbox mode — no secr
 
 | Plan | How to get it | Rate limits |
 |------|--------------|-------------|
-| **Sandbox** | No signup — just use the action | 10 analyses/repo/day |
-| **Trial** | [Start free trial](https://resourcepulseapp.com/trial) | Full Pro, 14 days |
-| **Pro** | [Upgrade](https://resourcepulseapp.com/upgrade) | 500 analyses/day |
+| **Preview** | No signup — just omit `api_key` | 25 analyses/repo/month |
+| **Starter** | [Sign up](https://www.resourcepulseapp.com) | 1,000 analyses/month |
+| **Team** | [Sign up](https://www.resourcepulseapp.com) | 5,000 analyses/month |
 
 ## Privacy
 
