@@ -18,7 +18,7 @@ resource postgresServer 'Microsoft.DBforPostgreSQL/flexibleServers@2023-06-01-pr
       geoRedundantBackup: 'Disabled'
     }
     highAvailability: {
-      mode: 'Disabled'
+      mode: 'ZoneRedundant'
     }
   }
   tags: {
