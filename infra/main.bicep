@@ -25,8 +25,8 @@ module postgres 'modules/postgres.bicep' = {
   }
 }
 
-module redis 'modules/redis.bicep' = {
-  name: 'redis'
+module servicebus 'modules/servicebus.bicep' = {
+  name: 'servicebus'
   params: {
     location: location
     environment: environment
@@ -36,3 +36,4 @@ module redis 'modules/redis.bicep' = {
 output storageAccountName string = storage.outputs.storageAccountName
 output webAppUrl string = appservice.outputs.webAppUrl
 output postgresHost string = postgres.outputs.postgresHost
+output serviceBusEndpoint string = servicebus.outputs.serviceBusEndpoint
